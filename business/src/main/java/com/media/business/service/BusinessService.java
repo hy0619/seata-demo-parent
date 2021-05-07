@@ -2,6 +2,8 @@ package com.media.business.service;
 
 import com.media.business.call.RemoteCall;
 import enums.RspStatusEnum;
+import io.seata.core.context.RootContext;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import response.ObjectResponse;
@@ -25,6 +27,7 @@ public class BusinessService {
      * @author: Hero
      * @date: 2021/5/7
      */
+    @GlobalTransactional
     public ObjectResponse buy(){
         ObjectResponse decStorageRes = remoteCall.decreaseStorage();
         ObjectResponse createOrderRes = remoteCall.crateOrder();
@@ -42,13 +45,16 @@ public class BusinessService {
      * @author: Hero
      * @date: 2021/5/7
      */
+    @GlobalTransactional
     public ObjectResponse buyForRollback(){
+        System.out.println(RootContext.getXID());
         ObjectResponse decStorageRes = remoteCall.decreaseStorage();
-        ObjectResponse createOrderRes = remoteCall.crateOrder();
-
         if(exceptionFlag){
             throw new RuntimeException(RspStatusEnum.FAIL.getMessage());
         }
+        ObjectResponse createOrderRes = remoteCall.crateOrder();
+
+
         return decStorageRes.getStatus() == RspStatusEnum.FAIL.getCode()
                 || createOrderRes.getStatus() == RspStatusEnum.FAIL.getCode() ?
 

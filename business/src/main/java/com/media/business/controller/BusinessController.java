@@ -38,6 +38,6 @@ public class BusinessController {
      */
     @GetMapping("/rollback/exception")
     public ObjectResponse buy4RollbackDistributeTransaction(){
-        return businessService.buy();
+        return businessService.buyForRollback();
     }
 }
