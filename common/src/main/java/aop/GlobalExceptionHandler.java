@@ -18,7 +18,7 @@ import response.ObjectResponse;
 
 
 @Slf4j
-@ControllerAdvice(basePackages = "com.sinochem.finance.hsy")
+@ControllerAdvice(basePackages = "com.media.*.controller")
 public class GlobalExceptionHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);

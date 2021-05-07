@@ -1,0 +1,19 @@
+server:
+  port: 83
+spring:
+  application:
+    name: seata-storage
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.229.128:3306/seata-storage?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+      username: root
+      password: root
+#====================================mybatis-plus config=
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  typeAliasesPackage: com.media.*.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto

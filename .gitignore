@@ -4,3 +4,6 @@
 /common/target/
 /order/target/
 /storage/target/
+
+.idea
+.gitignore
