@@ -1,11 +1,11 @@
-package com.media.business.config;
+package com.media.account.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @Description TODO
+ * @Description RestTemplateConfig
  * @Author Hero
  * @Date 2021/5/7
  * @Version 1.0.0

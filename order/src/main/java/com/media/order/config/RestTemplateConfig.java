@@ -1,7 +1,7 @@
 package com.media.order.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
  * @Date 2021/5/7
  * @Version 1.0.0
  */
-@Configuration
+@Component
 public class RestTemplateConfig {
 
     @Bean
