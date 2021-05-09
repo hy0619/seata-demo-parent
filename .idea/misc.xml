@@ -5,6 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/seata-springboot-restcall-at/account/pom.xml" />
+        <option value="$PROJECT_DIR$/seata-springboot-restcall-at/business/pom.xml" />
+        <option value="$PROJECT_DIR$/seata-springboot-restcall-at/order/pom.xml" />
+        <option value="$PROJECT_DIR$/seata-springboot-restcall-at/storage/pom.xml" />
       </list>
     </option>
   </component>
