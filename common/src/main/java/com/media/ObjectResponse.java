@@ -1,6 +1,6 @@
-package response;
+package com.media;
 
-import enums.RspStatusEnum;
+import com.media.common.RspStatusEnum;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

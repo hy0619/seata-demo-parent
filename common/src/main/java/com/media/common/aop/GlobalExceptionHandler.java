@@ -1,11 +1,11 @@
-package aop;
+package com.media.common.aop;
 
-import enums.RspStatusEnum;
-import exception.DefaultException;
+import com.media.common.RspStatusEnum;
+import com.media.common.exception.DefaultException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import response.ObjectResponse;
+import com.media.ObjectResponse;
 
 
 

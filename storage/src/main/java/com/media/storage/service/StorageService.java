@@ -3,7 +3,7 @@ package com.media.storage.service;
 import com.media.storage.mapper.StorageMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import response.ObjectResponse;
+import com.media.ObjectResponse;
 
 /**
  * @author Administrator

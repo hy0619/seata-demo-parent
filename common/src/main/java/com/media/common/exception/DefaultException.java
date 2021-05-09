@@ -1,7 +1,7 @@
-package exception;
+package com.media.common.exception;
 
 
-import enums.RspStatusEnum;
+import com.media.common.RspStatusEnum;
 
 /**
  * @Author: heshouyou

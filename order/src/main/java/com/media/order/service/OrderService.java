@@ -5,7 +5,7 @@ import com.media.order.mapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import response.ObjectResponse;
+import com.media.ObjectResponse;
 
 import java.util.UUID;
 

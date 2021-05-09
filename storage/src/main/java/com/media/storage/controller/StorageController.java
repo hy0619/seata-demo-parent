@@ -1,11 +1,14 @@
 package com.media.storage.controller;
 
+import com.media.ObjectResponse;
 import com.media.storage.service.StorageService;
+import io.seata.core.context.RootContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import response.ObjectResponse;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Description 商品库存service
@@ -28,7 +31,8 @@ public class StorageController {
      * @date: 2021/5/7
      */
     @GetMapping("/decrease")
-    public ObjectResponse decrease(String commodityCode , Integer count){
+    public ObjectResponse decrease(String commodityCode , Integer count , HttpServletRequest request){
+        System.out.println(request.getHeader(RootContext.KEY_XID.toLowerCase()));
         return storageService.decreaseStorage(commodityCode , count);
     }
 }

@@ -4,8 +4,10 @@ package com.media.account;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.media"
+        ,exclude = DataSourceAutoConfiguration.class)
 @MapperScan("com.media.*.mapper")
 public class AccountApplication {
 

@@ -1,4 +1,4 @@
-package enums;
+package com.media.common;
 
 /**
  * The enum Rsp status enum.

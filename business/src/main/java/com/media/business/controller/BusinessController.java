@@ -1,11 +1,12 @@
 package com.media.business.controller;
 
 import com.media.business.service.BusinessService;
+import io.seata.core.exception.TransactionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import response.ObjectResponse;
+import com.media.ObjectResponse;
 
 /**
  * @Description 业务Controller
@@ -18,6 +19,11 @@ import response.ObjectResponse;
 public class BusinessController {
     @Autowired
     BusinessService businessService;
+
+    @GetMapping("/rollback/buy2RollBackOps")
+    public ObjectResponse buy2RollBackOps() throws TransactionException {
+        return businessService.buy2RollBackOps();
+    }
 
     /**
      * @description: 分布式事务正常提交
