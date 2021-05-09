@@ -78,25 +78,19 @@ public class BusinessService {
         RMClient.init(applicationId, txServiceGroup);
         GlobalTransaction tx = GlobalTransactionContext.getCurrentOrCreate();
         System.out.println("begin trx, xid is " + tx.getXid());
-        ObjectResponse createOrderRes =null , decStorageRes = null;
+       // ObjectResponse createOrderRes =null , decStorageRes = null;
         try{
             tx.begin(60000, "testBiz");
-            decStorageRes = remoteCall.decreaseStorage();
+            remoteCall.decreaseStorage();
             if(exceptionFlag){
                 throw new RuntimeException(RspStatusEnum.FAIL.getMessage());
             }
-            createOrderRes = remoteCall.crateOrder();
+             remoteCall.crateOrder();
             tx.commit();
         }catch (Exception e){
             tx.rollback();
-        }finally {
-
         }
-
-        return decStorageRes.getStatus() == RspStatusEnum.FAIL.getCode()
-                 ?
-
-                ObjectResponse.fail() : ObjectResponse.success();
+        return ObjectResponse.success();
 
 
     }
